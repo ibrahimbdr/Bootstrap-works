@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+    <link rel="shortcut icon" href="./favicon-32x32.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <style>
+      .carousel-control-prev-icon {
+        background-image: url("./images/prev.svg") !important;
+      }
+
+      .carousel-control-next-icon {
+        background-image: url("./images/nex.svg") !important;
+      }
+
+      .express-img{
+        background-image: url('data:image/svg+xml;utf8,<svg… width="82" height="22" viewBox="0 0 82 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M82 0C81.6986 1.14758 78.4111 13.3232 77.4248 16.2901C76.603 18.8372 73.9729 21.4682 69.2608 22C68.8498 21.972 11.9447 22 11.1228 22H10.7667C10.6023 22 10.4379 22 10.2736 22C4.54776 21.7481 0 16.9338 0 11.028C0 7.9771 1.20543 5.2341 3.15056 3.24682C5.09569 1.23155 7.80791 0 10.7667 0H82Z" fill="#FEEE00"/><path d="M12.1576 15.1428C13.2913 15.1428 14.5007 14.8037 15.3888 14.2009L14.6518 12.5245C14.085 12.9577 13.1591 13.1838 12.3465 13.1838C10.6459 13.1838 9.83338 12.1478 9.83338 11.3755C9.83338 11.319 9.83338 11.2059 9.83338 11.1494H16.617C16.6926 10.8669 16.806 10.1888 16.806 9.6425C16.806 7.09957 15.0487 5.59265 12.7056 5.59265C9.66331 5.59265 7.43359 8.09791 7.43359 11.0552C7.43359 13.5982 9.28539 15.1428 12.1576 15.1428ZM14.6329 9.49181H10.0979C10.2869 8.49348 11.2506 7.55165 12.5544 7.55165C13.9905 7.55165 14.6707 8.38046 14.6707 9.30345C14.6707 9.34112 14.6707 9.45414 14.6518 9.49181H14.6329Z" fill="#404553"/><path d="M25.8521 14.9167L23.6224 10.2453L27.6661 5.81869H24.9073L22.3941 8.6065L21.147 5.81869H18.5394L20.599 10.2453L16.3286 14.9167H19.0685L21.8462 11.8464L23.2634 14.9167H25.8521Z" fill="#404553"/><path d="M32.6151 15.1428C35.714 15.1428 37.4146 12.0913 37.4146 9.35996C37.4146 6.94888 36.0163 5.59265 33.9567 5.59265C32.8607 5.59265 31.9726 6.04473 31.1979 6.94888L31.4624 5.81869H29.0626L26.266 18.3827H28.6658L29.7051 13.7112C30.3098 14.6153 31.3868 15.1428 32.6151 15.1428ZM32.2183 13.0142C31.2546 13.0142 30.4798 12.581 30.083 11.9594L30.8011 8.8137C31.2924 8.19209 32.0482 7.72118 32.8796 7.72118C34.0512 7.72118 34.9015 8.54999 34.9015 9.84971C34.9015 11.5262 33.8055 13.0142 32.2183 13.0142Z" fill="#404553"/><path d="M40.457 14.9167L41.7797 8.94555C42.3088 8.34278 43.1592 7.85303 44.0473 7.85303C44.4252 7.85303 44.7653 7.92838 44.9165 7.96605L45.4456 5.59265C43.9906 5.59265 43.008 6.13891 42.2144 7.00539L42.4789 5.81869H40.0791L38.0573 14.9167H40.457Z" fill="#404553"/><path d="M49.9494 15.1428C51.0832 15.1428 52.2925 14.8037 53.1806 14.2009L52.4437 12.5245C51.8768 12.9577 50.9509 13.1838 50.1384 13.1838C48.4378 13.1838 47.6252 12.1478 47.6252 11.3755C47.6252 11.319 47.6252 11.2059 47.6252 11.1494H54.4089C54.4845 10.8669 54.5978 10.1888 54.5978 9.6425C54.5978 7.09957 52.8405 5.59265 50.4974 5.59265C47.4552 5.59265 45.2254 8.09791 45.2254 11.0552C45.2254 13.5982 47.0773 15.1428 49.9494 15.1428ZM52.4248 9.49181H47.8898C48.0787 8.49348 49.0424 7.55165 50.3462 7.55165C51.7823 7.55165 52.4626 8.38046 52.4626 9.30345C52.4626 9.34112 52.4626 9.45414 52.4437 9.49181H52.4248Z" fill="#404553"/><path d="M59.279 15.1428C61.7733 15.1428 63.2283 13.6924 63.2283 11.9594C63.2283 9.19043 58.5799 9.4353 58.5799 8.32395C58.5799 7.85303 59.0523 7.4763 59.9026 7.4763C61.0174 7.4763 62.1512 8.09791 62.5858 8.663L63.8329 7.0619C62.9637 6.17658 61.5087 5.59265 59.9593 5.59265C57.5217 5.59265 56.199 7.08074 56.199 8.663C56.199 11.3943 60.8474 11.0929 60.8474 12.3173C60.8474 12.8259 60.3372 13.2591 59.5247 13.2591C58.2019 13.2591 56.8792 12.468 56.3312 11.8275L54.9896 13.504C56.01 14.5777 57.6162 15.1428 59.279 15.1428Z" fill="#404553"/><path d="M68.2841 15.1428C70.7784 15.1428 72.2333 13.6924 72.2333 11.9594C72.2333 9.19043 67.5849 9.4353 67.5849 8.32395C67.5849 7.85303 68.0573 7.4763 68.9077 7.4763C70.0225 7.4763 71.1563 8.09791 71.5909 8.663L72.838 7.0619C71.9688 6.17658 70.5138 5.59265 68.9643 5.59265C66.5268 5.59265 65.2041 7.08074 65.2041 8.663C65.2041 11.3943 69.8525 11.0929 69.8525 12.3173C69.8525 12.8259 69.3423 13.2591 68.5297 13.2591C67.207 13.2591 65.8843 12.468 65.3363 11.8275L63.9947 13.504C65.0151 14.5777 66.6213 15.1428 68.2841 15.1428Z" fill="#404553"/></svg>');
+      }
+    </style>
+
+</head>
+<body class="bg-light bg-opacity-75" style="position: relative;">
+
+    <!-- <button id="helpBtn" class="btn btn-secondary text-light rounded-pill fs-5 fw-bold position-fixed bottom-0 end-0 mb-3 me-3" style="z-index: 1045;"><i class="bi bi-chat"></i> Help</button> -->
+
+    <!-- Scrollable modal -->
+    <!-- <div id="helpBox" class="d-none modal-dialog modal-dialog-scrollable bg-light position-fixed bottom-0 end-0 mb-1 me-2 rounded-5 shadow" style="z-index: 1045;">
+      <div class="text-center text-light bg-secondary d-flex justify-content-between align-items-center rounded-top">
+        <div></div>  
+        <h5>Help</h5>
+        <button id="closeHelpBtn" class="btn btn-secondary text-light fs-3 bg-dark" style="z-index: 1045;">-</button>
+      </div>
+      <form class="d-flex w-100 bg-secondary p-3" role="search">
+          <input class="form-control me-2 w-100" type="search" placeholder="What are you looking for?" aria-label="Search">
+      </form>
+
+      
+        <div class="p-2">
+          <h5 class="text-secondary">Top suggestions</h5>
+      <ol class="text-secondary">
+        <li>Email Us On egypt@noon.com for Egypt.</li>
+        <li>Live Chat - We are available 24/7 in UAE, KSA & Egypt.</li>
+        <li>For Egypt Call Us On 16358 From 9:00 am to 9:00 pm.</li>
+      </ol>
+        </div>
+      
+      <div class="position-absolute bottom-0 end-0 me-3 mb-3">
+        <button class="btn btn-secondary text light">Live Chat</button>
+      </div>
+    </div> -->
+
+    <button type="button" class="btn btn-secondary text-light rounded-pill fs-5 fw-bold position-fixed bottom-0 end-0 mb-3 me-3" style="z-index: 1045;" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="bi bi-chat"></i> Help </button>
+
+<div class="modal fade modal-dialog modal-dialog-scrollable bg-light position-fixed bottom-0 end-0 mb-1 me-2 rounded-5 shadow" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog mt-0">
+    <div class="modal-content">
+      <div class="modal-header bg-secondary text-light">
+        <h5 class="modal-title" id="exampleModalLabel">Help</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="search"></div>
+        <form class="d-flex w-100 bg-secondary p-3" role="search">
+          <input class="form-control me-2 w-100" type="search" placeholder="What are you looking for?" aria-label="Search">
+        </form>
+      <div class="modal-body">
+        <div class="p-2">
+          <h5 class="text-secondary">Top suggestions</h5>
+      <ol class="text-secondary">
+        <li>Email Us On egypt@noon.com for Egypt.</li>
+        <li>Live Chat - We are available 24/7 in UAE, KSA & Egypt.</li>
+        <li>For Egypt Call Us On 16358 From 9:00 am to 9:00 pm.</li>
+      </ol>
+        </div>
+      </div>
+      <div class="modal-footer position-fixed bottom-0 end-0 mb-4 me-2">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Live Chat</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <nav class="navbar navbar-expand-lg" style="background-color: yellow;">
+      <div class="container-fluid">
+          <span><i class="bi bi-arrow-return-left"></i> FREE & EASY RETURNS</span>
+          <span class="ps-4"><i class="bi bi-percent"></i> BEST DEALS</span>
+      </div>
+    </nav>
+
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: yellow;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img width="100px" src="./images/noon.png" alt="">
+            </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-1" aria-controls="navbar-1" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar-1">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Deliver to</a>
+              </li>
+              
+              <li class="nav-item w-75">
+                <form class="d-flex w-100" role="search">
+                    <input class="form-control me-2 w-100" type="search" placeholder="What are you looking for?" aria-label="Search">
+                  </form>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">العربية</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sign in</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Card</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <button class="navbar-toggler bg-dark bg-opacity-50 bg-gradient" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-2" aria-controls="navbar-2" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="bi bi-stars" style="color: yellow;">Categories</span>
+          </button>
+          <div class="collapse navbar-collapse overflow-scroll" id="navbar-2">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100">
+              <li class="nav-item">
+                <div class="accordion" id="accordion-1">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-1">
+                      <button class="btn btn-outline-light text-primary dropdown-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+                        ALL CATEGORIES
+                      </button>
+                    </h2>
+                    <div id="collapse-1" class="accordion-collapse collapse" aria-labelledby="heading-1" data-bs-parent="#accordion-1">
+                      <div class="accordion-body bg-light shadow border border-1 w-100 d-flex" style="position:absolute; left: 0; z-index: 1045;">
+                        <div class="col-1">
+                          <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none text-dark">Electronics</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Mobiles</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Men</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Women</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Home</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Health & Beauty</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Baby & Toys</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Supermarket</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Sell on Noon</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Deals</a></li>
+                          </ul>
+                        </div>
+                        <div class="col d-flex flex-wrap">
+                          <!-- <img src="./images/Electronics brands/drop-brand-01.png" class="w-25" alt="">
+                          <img src="./images/Electronics brands/drop-brand-02.png" class="w-25" alt="">
+                          <img src="./images/Electronics brands/drop-brand-03.png" class="w-25" alt="">
+                          <img src="./images/Electronics brands/drop-brand-04.png" class="w-25" alt="">
+                          <img src="./images/Electronics brands/drop-brand-05.png" class="w-25" alt="">
+                          <img src="./images/Electronics brands/drop-brand-06.png" class="w-25" alt="">
+                          <img src="./images/Electronics brands/drop-brand-08.png" class="w-25" alt="">
+                          <img src="./images/Electronics brands/drop-brand-09.png" class="w-25" alt="">
+                          <img src="./images/Electronics brands/drop-brand-10.png" class="w-25" alt=""> -->
+                        </div>
+                        <div class="col d-flex">
+                          <!-- <img src="./images/Electronics brands/Pictures/en_drop-01.png" alt="">
+                          <img src="./images/Electronics brands/Pictures/en_drop-02.png" alt=""> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              
+              <li class="nav-item">
+                <div class="accordion" id="accordion-2">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-2">
+                      <button class="btn btn-light dropdown-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                        ELECTRONICS
+                      </button>
+                    </h2>
+                    <div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2" data-bs-parent="#accordion-2">
+                      <div class="accordion-body bg-light shadow border border-1 w-100 d-flex" style="position:absolute; left: 0; z-index: 1045;">
+                        <div class="col-1">
+                          <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none text-dark">TV and Satellites</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Laptops</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Audio System</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Video Games</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Data Storages</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Cameras</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Networks Products</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Printers</a></li>
+                          </ul>
+                        </div>
+                        <div class="col d-flex flex-wrap">
+                          <img src="./images/Electronics brands/drop-brand-01.png" class="w-25" alt="">
+                          <img src="./images/Electronics brands/drop-brand-02.png" class="w-25" alt="">
+                          <img src="./images/Electronics brands/drop-brand-03.png" class="w-25" alt="">
+                          <img src="./images/Electronics brands/drop-brand-04.png" class="w-25" alt="">
+                          <img src="./images/Electronics brands/drop-brand-05.png" class="w-25" alt="">
+                          <img src="./images/Electronics brands/drop-brand-06.png" class="w-25" alt="">
+                          <img src="./images/Electronics brands/drop-brand-08.png" class="w-25" alt="">
+                          <img src="./images/Electronics brands/drop-brand-09.png" class="w-25" alt="">
+                          <img src="./images/Electronics brands/drop-brand-10.png" class="w-25" alt="">
+                        </div>
+                        <div class="col d-flex">
+                          <img src="./images/Electronics brands/Pictures/en_drop-01.png" alt="">
+                          <img src="./images/Electronics brands/Pictures/en_drop-02.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <div class="accordion" id="accordion-3">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-3">
+                      <button class="btn btn-light dropdown-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+                        MOBILES
+                      </button>
+                    </h2>
+                    <div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion-3">
+                      <div class="accordion-body bg-light shadow border border-1 w-100 d-flex" style="position:absolute; left: 0; z-index: 1045;">
+                        <div class="col-1">
+                          <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none text-dark">iPhone</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Samsung</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Huwawi</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Oppo</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Xaomi</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Honer</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Sony</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">One Plus</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Pixel</a></li>
+                          </ul>
+                        </div>
+                        <div class="col d-flex flex-wrap">
+                          <img src="./images/Mobile Brands/drop-brand-01.png" class="w-25" alt="">
+                          <img src="./images/Mobile Brands/drop-brand-02.png" class="w-25" alt="">
+                          <img src="./images/Mobile Brands/drop-brand-03.png" class="w-25" alt="">
+                          <img src="./images/Mobile Brands/drop-brand-04.png" class="w-25" alt="">
+                          <img src="./images/Mobile Brands/drop-brand-05.png" class="w-25" alt="">
+                          <img src="./images/Mobile Brands/drop-brand-06.png" class="w-25" alt="">
+                          <img src="./images/Mobile Brands/drop-brand-07.png" class="w-25" alt="">
+                          <img src="./images/Mobile Brands/drop-brand-08.png" class="w-25" alt="">
+                          <img src="./images/Mobile Brands/drop-brand-09.png" class="w-25" alt="">
+                        </div>
+                        <div class="col d-flex">
+                          <img src="./images/Mobile Brands/Pictures/en_drop-01.png" alt="">
+                          <img src="./images/Mobile Brands/Pictures/en_drop-02.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <div class="accordion" id="accordion-4">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-4">
+                      <button class="btn btn-light dropdown-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+                        MEN
+                      </button>
+                    </h2>
+                    <div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="heading-4" data-bs-parent="#accordion-4">
+                      <div class="accordion-body bg-light shadow border border-1 w-100 d-flex" style="position:absolute; left: 0; z-index: 1045;">
+                        <div class="col-1">
+                          <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none text-dark">T-Shirts</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Jeans</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Suits</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Shorts</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Pants</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Shoes</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Perfumes</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Accessories</a></li>
+                          </ul>
+                        </div>
+                        <div class="col d-flex flex-wrap">
+                          <img src="./images/Men's Brands/drop-brand-01.png" class="w-25" alt="">
+                          <img src="./images/Men's Brands/drop-brand-02.png" class="w-25" alt="">
+                          <img src="./images/Men's Brands/drop-brand-03.png" class="w-25" alt="">
+                          <img src="./images/Men's Brands/drop-brand-04.png" class="w-25" alt="">
+                          <img src="./images/Men's Brands/drop-brand-05.png" class="w-25" alt="">
+                          <img src="./images/Men's Brands/drop-brand-06.png" class="w-25" alt="">
+                          <img src="./images/Men's Brands/drop-brand-08.png" class="w-25" alt="">
+                          <img src="./images/Men's Brands/drop-brand-09.png" class="w-25" alt="">
+                          <img src="./images/Men's Brands/drop-brand-10.png" class="w-25" alt="">
+                        </div>
+                        <div class="col d-flex">
+                          <img src="./images/Men's Brands/Pictures/en_drop-1.png" alt="">
+                          <img src="./images/Men's Brands/Pictures/en_drop-2.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <div class="accordion" id="accordion-5">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-5">
+                      <button class="btn btn-light dropdown-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+                        WOMEN
+                      </button>
+                    </h2>
+                    <div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="heading-5" data-bs-parent="#accordion-5">
+                      <div class="accordion-body bg-light bg-light shadow border border-1 w-100 d-flex" style="position:absolute; left: 0; z-index: 1045;">
+                        <div class="col-1">
+                          <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none text-dark">Women Clothing</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Handbags</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Eyewear</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Jewellery</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Footwear</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Kid's Fasion</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Accessories</a></li>
+                          </ul>
+                        </div>
+                        
+                        <div class="col d-flex flex-wrap">
+                          <img src="./images/Women's Brands/drop-brand-01.png" class="w-25" alt="">
+                          <img src="./images/Women's Brands/drop-brand-02.png" class="w-25" alt="">
+                          <img src="./images/Women's Brands/drop-brand-03.png" class="w-25" alt="">
+                          <img src="./images/Women's Brands/drop-brand-04.png" class="w-25" alt="">                          
+                          <img src="./images/Women's Brands/drop-brand-05.png" class="w-25" alt="">
+                          <img src="./images/Women's Brands/drop-brand-06.png" class="w-25" alt="">
+                          <img src="./images/Women's Brands/drop-brand-07.png" class="w-25" alt="">
+                          <img src="./images/Women's Brands/drop-brand-08.png" class="w-25" alt="">
+                          <img src="./images/Women's Brands/drop-brand-11.png" class="w-25" alt="">
+                        </div>
+                        <div class="col d-flex">
+                          <img src="./images/N43239169V_1.webp" alt="">
+                          <img src="./images/N43239169V_1.webp" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <div class="accordion" id="accordion-6">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-6">
+                      <button class="btn btn-light dropdown-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6">
+                        HOME
+                      </button>
+                    </h2>
+                    <div id="collapse-6" class="accordion-collapse collapse" aria-labelledby="heading-6" data-bs-parent="#accordion-6">
+                      <div class="accordion-body bg-light shadow border border-1 w-100 d-flex" style="position:absolute; left: 0; z-index: 1045;">
+                        <div class="col-1">
+                          <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none text-dark">Kitchen</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Washers</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Fridges</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Freezers</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">TV</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Cleaning</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Air-Conditioning</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Tools</a></li>
+                          </ul>
+                        </div>
+                        <div class="col d-flex flex-wrap">
+                          <img src="./images/Home Brands/tornado.png" class="w-25" alt="">
+                          <img src="./images/Home Brands/toshiba.png" class="w-25" alt="">
+                          <img src="./images/Home Brands/mienta.png" class="w-25" alt="">
+                          <img src="./images/Home Brands/black_decker.png" class="w-25" alt="">
+                          <img src="./images/Home Brands/drop-brand-11.png" class="w-25" alt="">
+                          <img src="./images/Home Brands/drop-brand-12.png" class="w-25" alt="">
+                          <img src="./images/Home Brands/drop-brand-13.png" class="w-25" alt="">
+                          <img src="./images/Home Brands/drop-brand-14.png" class="w-25" alt="">
+                          <img src="./images/Home Brands/drop-brand-15.png" class="w-25" alt="">
+                                                    
+                        </div>
+                        <div class="col d-flex">
+                          <img src="./images/Home Brands/Pictures/en_drop-01.png" alt="">
+                          <img src="./images/Home Brands/Pictures/en_drop-02.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <div class="accordion" id="accordion-7">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-7">
+                      <button class="btn btn-light dropdown-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-7" aria-expanded="false" aria-controls="collapse-7">
+                        BEAUTY & HEALTH
+                      </button>
+                    </h2>
+                    <div id="collapse-7" class="accordion-collapse collapse" aria-labelledby="heading-7" data-bs-parent="#accordion-7">
+                      <div class="accordion-body bg-light shadow border border-1 w-100 d-flex" style="position:absolute; left: 0; z-index: 1045;">
+                        <div class="col-1">
+                          <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none text-dark">Fragrance</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Makeup</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Hair Care</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Skin Care</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Personal Care</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Health & Nutrition</a></li>
+                          </ul>
+                        </div>
+                        <div class="col d-flex flex-wrap">
+                              <img src="./images/Beauty brands/drop-brand-10.png" class="w-25" alt="">
+                              <img src="./images/Beauty brands/drop-brand-18.png" class="w-25" alt="">
+                              <img src="./images/Beauty brands/en_drop-brand-02.png" class="w-25" alt="">
+                              <img src="./images/Beauty brands/en_drop-brand-04.png" class="w-25" alt="">
+                              <img src="./images/Beauty brands/en_drop-brand-05.png" class="w-25" alt=""> 
+                              <img src="./images/Beauty brands/en_drop-brand-06.png" class="w-25" alt="">
+                              <img src="./images/Beauty brands/essence.png" class="w-25" alt="">
+                              <img src="./images/Beauty brands/loreal.png" class="w-25" alt="">
+                              <img src="./images/Beauty brands/maybelline.png" class="w-25" alt="">                   
+                        </div>
+                        <div class="col">
+                          <img src="./images/Beauty brands/Pictures/en_dk_eg-drop-01.png" alt="">
+                          <img src="./images/Beauty brands/Pictures/en_dk_eg-drop-02.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <div class="accordion" id="accordion-8">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-8">
+                      <button class="btn btn-light dropdown-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-8" aria-expanded="false" aria-controls="collapse-8">
+                        BABY & TOYS
+                      </button>
+                    </h2>
+                    <div id="collapse-8" class="accordion-collapse collapse" aria-labelledby="heading-8" data-bs-parent="#accordion-8">
+                      <div class="accordion-body bg-light shadow border border-1 w-100 d-flex" style="position:absolute; left: 0; z-index: 1045;">
+                        <div class="col-3">
+                          <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none text-dark">Diapers & Diaper Bags</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Bathing & Skin Care</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Nursing & Feeding</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Baby Safety Products</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Car Seats & Strollers</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Bouncers & Swings</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Potty Training</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Toys</a></li>
+                          
+                          </ul>
+                        </div>
+                        <div class="col d-flex flex-wrap">
+                          <img src="./images/Baby Brands/baby_joy.png" class="w-25" alt="">
+                                                    
+                        </div>
+                        <div class="col d-flex">
+                          <img src="./images/N40583502A_1.webp" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              
+              <li class="nav-item">
+                <div class="accordion" id="accordion-9">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-9">
+                      <button class="btn btn-light dropdown-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-9" aria-expanded="false" aria-controls="collapse-9">
+                        SUPERMARKET
+                      </button>
+                    </h2>
+                    <div id="collapse-9" class="accordion-collapse collapse" aria-labelledby="heading-9" data-bs-parent="#accordion-9">
+                      <div class="accordion-body bg-light shadow border border-1 w-100 d-flex" style="position:absolute; left: 0; z-index: 1045;">
+                        <div class="col-3">
+                          <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none text-dark">Snacks</a></li>
+              <li><a href="#" class="text-decoration-none text-dark">Bevarages</a></li>
+              <li><a href="#" class="text-decoration-none text-dark">Baby Food</a></li>
+              <li><a href="#" class="text-decoration-none text-dark">Canned Food</a></li>
+              <li><a href="#" class="text-decoration-none text-dark">Candy & Chocoloate</a></li>
+              <li><a href="#" class="text-decoration-none text-dark">Pet Supplies</a></li>
+              
+
+                          
+                          </ul>
+                        </div>
+                        <div class="col">
+                          <img src="./images/en_brand_10.png" class="w-75" alt="">
+                          <img src="./images/en_brand_11.png" class="w-75" alt="">
+
+                                                    
+                        </div>
+                        <div class="col">
+                          <img src="./images/N40583502A_1.webp" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                  <h2 class="accordion-header" id="heading-8">
+                    <button class="btn btn-light dropdown-toggle" type="button">
+                      SELL ON NOON
+                    </button>
+                  </h2>
+              </li>
+              
+              <li class="nav-item">
+                <div class="accordion" id="accordion-11">
+                  <h2 class="accordion-header" id="heading-8">
+                    <button class="btn btn-light text-danger dropdown-toggle" type="button">
+                      DEALS
+                    </button>
+                  </h2>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- <nav class="navbar navbar-expand-lg bg-light container-fluid p-0 w-100">
+        <div class="container-fluid overflow-scroll d-flex p-0">
+            <ul class="navbar-nav">
+
+              <li class="nav-item">
+                <div class="accordion" id="accordion-1">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-1">
+                      <button class="btn btn-outline-light text-primary dropdown-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+                        ALL CATEGORIES
+                      </button>
+                    </h2>
+                    <div id="collapse-1" class="accordion-collapse collapse" aria-labelledby="heading-1" data-bs-parent="#accordion-1">
+                      <div class="accordion-body bg-light shadow border border-1 w-100 d-flex" style="position:absolute; left: 0; z-index: 1045;">
+                        <div class="col-2">
+                          <ul class="list-unstyled">
+                            <li>Electronics</li>
+                            <li>Mobiles</li>
+                            <li>Men</li>
+                            <li>Women</li>
+                            <li>Home</li>
+                            <li>Beauty & Health</li>
+                            <li>Baby & Toys</li>
+                            <li>Supermarket</li>
+                            <li>Sell on Noon</li>
+                            <li>Deals</li>
+                          </ul>
+                        </div>
+                        <div class="col">
+                          <img src="./images/en_brand_01.png" alt="">
+                          <img src="./images/en_brand_02.png" alt="">
+                          <img src="./images/en_brand_03.png" alt="">
+                          <img src="./images/en_brand_04.png" alt="">
+                          <img src="./images/en_brand_05.png" alt="">
+                          <img src="./images/en_brand_06.png" alt="">
+                        </div>
+                        <div class="col">
+                          <img src="./images/N40583502A_1.webp" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              
+              
+            </ul>
+        </div>
+      </nav> -->
+
+
+      <div class="container-fluid p-0">
+        <div class="row">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./images/en_dk_eg-hero-banner-01.avif" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/en_dk_eg-hero-banner-01 (1).avif" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/en_dk_eg-hero-banner-01 (2).avif" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/en_dk_eg-hero-banner-01 (3).avif" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="container-fluid p-0 bg-light">
+          <img src="./images/en_title-01.webp" class="w-100" alt="">
+      </div>
+
+      <div class="container-fluid bg-light p-2 mb-3">
+        <div class="row">
+          <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              
+              <div class="carousel-item active" data-bs-interval="999999">
+                <ul class="d-flex justify-content-around align-content-center list-unstyled">
+                  <li>
+                    <img src="./images/xconvert.com.png" class="d-block w-100" alt="...">
+                  </li>
+                  <li>
+                    <img src="./images/xconvert.com.png" class="d-block w-100" alt="...">
+                  </li>
+                  <li>
+                    <img src="./images/xconvert.com.png" class="d-block w-100" alt="...">
+                  </li>
+                  <li>
+                    <img src="./images/xconvert.com.png" class="d-block w-100" alt="...">
+                  </li>
+                  <li>
+                    <img src="./images/xconvert.com.png" class="d-block w-100" alt="...">
+                  </li>
+                  <li>
+                    <img src="./images/xconvert.com.png" class="d-block w-100" alt="...">
+                  </li>
+                </ul>
+              </div>
+    
+              <div class="carousel-item" data-bs-interval="999999">
+                <ul class="d-flex justify-content-around align-content-center list-unstyled">
+                  <li>
+                    <img src="./images/en_category-01.png" class="d-block w-100" alt="...">
+                  </li>
+                  <li>
+                    <img src="./images/en_category-01.png" class="d-block w-100" alt="...">
+                  </li>
+                  <li>
+                    <img src="./images/en_category-01.png" class="d-block w-100" alt="...">
+                  </li>
+                  <li>
+                    <img src="./images/en_category-01.png" class="d-block w-100" alt="...">
+                  </li>
+                  <li>
+                    <img src="./images/en_category-01.png" class="d-block w-100" alt="...">
+                  </li>
+                  <li>
+                    <img src="./images/en_category-01.png" class="d-block w-100" alt="...">
+                  </li>
+                </ul>
+              </div>
+              
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid bg-light my-3">
+        <div class="row justify-content-evenly">
+          <div class="col-sm card shadow m-2">
+            <div class="col-12 d-flex justify-content-evenly">
+              <div class="card col-6 m-2">
+                <img src="./images/cropimage4120.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Clearance</h5>
+                  <p class="card-text">Essentials at low prices</p>
+                </div>
+              </div>
+              <div class="card col-6 m-2">
+                <img src="./images/cropimage4120.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Clearance</h5>
+                  <p class="card-text">Essentials at low prices</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 d-flex justify-content-evenly">
+              <div class="card col-6 m-2">
+                <img src="./images/cropimage4120.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Clearance</h5>
+                  <p class="card-text">Essentials at low prices</p>
+                </div>
+              </div>
+              <div class="card col-6 m-2">
+                <img src="./images/cropimage4120.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Clearance</h5>
+                  <p class="card-text">Essentials at low prices</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm card shadow justify-content-center p-3 m-2" style="background-color: #FAF29D;">
+            <div class="col-12 d-flex justify-content-evenly">
+              <div class="card col-6 m-2">
+                <img src="./images/cropimage4120.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Clearance</h5>
+                  <p class="card-text">Essentials at low prices</p>
+                </div>
+              </div>
+              <div class="card col-6 m-2">
+                <img src="./images/cropimage4120.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Clearance</h5>
+                  <p class="card-text">Essentials at low prices</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 d-flex justify-content-evenly">
+              <div class="card col-6 m-2">
+                <img src="./images/cropimage4120.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Clearance</h5>
+                  <p class="card-text">Essentials at low prices</p>
+                </div>
+              </div>
+              <div class="card col-6 m-2">
+                <img src="./images/cropimage4120.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Clearance</h5>
+                  <p class="card-text">Essentials at low prices</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm card shadow justify-content-center p-3 m-2">
+            <div class="col-12 d-flex justify-content-evenly">
+              <div class="card col-6 m-2">
+                <img src="./images/cropimage4120.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Clearance</h5>
+                  <p class="card-text">Essentials at low prices</p>
+                </div>
+              </div>
+              <div class="card col-6 m-2">
+                <img src="./images/cropimage4120.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Clearance</h5>
+                  <p class="card-text">Essentials at low prices</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 d-flex justify-content-evenly">
+              <div class="card col-6 m-2">
+                <img src="./images/cropimage4120.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Clearance</h5>
+                  <p class="card-text">Essentials at low prices</p>
+                </div>
+              </div>
+              <div class="card col-6 m-2">
+                <img src="./images/cropimage4120.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Clearance</h5>
+                  <p class="card-text">Essentials at low prices</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+        <div class="container-fluid bg-light p-2 mt-3">
+          <div class="row">
+            <div class="col-12 d-flex justify-content-between">
+              <h2>Hot Deals</h2>
+              <button type="button" class="btn btn-outline-dark rounded-0">SHOP NOW</button>
+            </div>
+            <div id="carouselExampleIndicators3" class="carousel slide" data-bs-ride="true">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                
+                <div class="carousel-item active" data-bs-interval="999999">
+                  <ul class="d-flex justify-content-around align-content-center list-unstyled">
+                    <li>
+                      <div class="card m-2 border-0">
+                        <img src="./images/N42342017A_1.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">PS 5 with Games</p>
+                          <p class="fs-6">EGP<span class="fw-bold"> 12,938.85</span></p>
+                          <div class="rating d-flex justify-content-between">
+                            <span class="express-img"></span>
+                            <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0 <span class="text-secondary">(128)</span></span>
+                          </div>
+                        </div>
+                      </div>                    </li>
+                    <li>
+                      <div class="card m-2 border-0">
+                        <img src="./images/N42342017A_1.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">PS 5 with Games</p>
+                          <p class="fs-6">EGP<span class="fw-bold"> 12,938.85</span></p>
+                          <div class="rating d-flex justify-content-between">
+                            <span class="express-img"></span>
+                            <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0 <span class="text-secondary">(128)</span></span>
+                          </div>
+                        </div>
+                      </div>                    </li>
+                    <li>
+                      <div class="card m-2 border-0">
+                        <img src="./images/N42342017A_1.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">PS 5 with Games</p>
+                          <p class="fs-6">EGP<span class="fw-bold"> 12,938.85</span></p>
+                          <div class="rating d-flex justify-content-between">
+                            <span class="express-img"></span>
+                            <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0 <span class="text-secondary">(128)</span></span>
+                          </div>
+                        </div>
+                      </div>                    </li>
+                    <li>
+                      <div class="card m-2 border-0">
+                        <img src="./images/N42342017A_1.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">PS 5 with Games</p>
+                          <p class="fs-6">EGP<span class="fw-bold"> 12,938.85</span></p>
+                          <div class="rating d-flex justify-content-between">
+                            <span class="express-img"></span>
+                            <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0 <span class="text-secondary">(128)</span></span>
+                          </div>
+                        </div>
+                      </div>                    </li>
+                    
+                  </ul>
+                </div>
+      
+                <div class="carousel-item" data-bs-interval="999999">
+                  <ul class="d-flex justify-content-around align-content-center list-unstyled">
+                    <li>
+                      <div class="card m-2 border-0">
+                        <img src="./images/N42342017A_1.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">PS 5 with Games</p>
+                          <p class="fs-6">EGP<span class="fw-bold"> 12,938.85</span></p>
+                          <div class="rating d-flex justify-content-between">
+                            <span class="express-img"></span>
+                            <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0 <span class="text-secondary">(128)</span></span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="card m-2 border-0">
+                        <img src="./images/N42342017A_1.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">PS 5 with Games</p>
+                          <p class="fs-6">EGP<span class="fw-bold"> 12,938.85</span></p>
+                          <div class="rating d-flex justify-content-between">
+                            <span class="express-img"></span>
+                            <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0 <span class="text-secondary">(128)</span></span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="card m-2 border-0">
+                        <img src="./images/N42342017A_1.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">PS 5 with Games</p>
+                          <p class="fs-6">EGP<span class="fw-bold"> 12,938.85</span></p>
+                          <div class="rating d-flex justify-content-between">
+                            <span class="express-img"></span>
+                            <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0 <span class="text-secondary">(128)</span></span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="card m-2 border-0">
+                        <img src="./images/N42342017A_1.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">PS 5 with Games</p>
+                          <p class="fs-6">EGP<span class="fw-bold"> 12,938.85</span></p>
+                          <div class="rating d-flex justify-content-between">
+                            <span class="express-img"></span>
+                            <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0 <span class="text-secondary">(128)</span></span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid p-0 bg-light">
+          <img src="./images/en_dk_eg-title-02.webp" class="w-100" alt="">
+      </div>
+      <div class="container-fluid bg-light">
+        <div class="row">
+          <div class="col-sm">
+            <img src="./images/en_dk_eg-cat-01.webp" class="w-100" alt="">
+          </div>
+          <div class="col-sm">
+            <img src="./images/en_dk_eg-cat-02.webp" class="w-100" alt="">
+          </div>
+          <div class="col-sm">
+            <img src="./images/en_dk_eg-cat-03.webp" class="w-100" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid p-0 bg-light pt-4">
+        <img src="./images/en_title-07.webp" class="w-100" alt="">
+    </div>
+
+    <div class="container-fluid py-4" style="background-color: #FCF8E0">
+      <div class="row">
+        <div class="col-sm">
+          <img src="./images/en_cat-01.webp" class="w-100" alt="">
+        </div>
+        <div class="col-sm">
+          <img src="./images/en_cat-02.webp" class="w-100" alt="">
+        </div>
+        <div class="col-sm">
+          <img src="./images/en_cat-03.webp" class="w-100" alt="">
+        </div>
+        <div class="col-sm">
+          <img src="./images/en_cat-04.webp" class="w-100" alt="">
+        </div>
+        <div class="col-sm">
+          <img src="./images/en_cat-05.webp" class="w-100" alt="">
+        </div>
+        <div class="col-sm">
+          <img src="./images/en_cat-06.webp" class="w-100" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid bg-light p-2 mt-3">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-between">
+          <h2>Mobile Deals</h2>
+          <button type="button" class="btn btn-outline-dark rounded-0">SHOP NOW</button>
+        </div>
+        <div id="carouselExampleIndicators4" class="carousel slide" data-bs-ride="true">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            
+            <div class="carousel-item active" data-bs-interval="999999">
+              <ul class="d-flex justify-content-around align-content-center list-unstyled">
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N53318702A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Samsung Galaxy S21Z</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 10,999.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0 <span class="text-secondary">(290)</span></span>
+                      </div>
+                  </div>                    </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N53318702A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Samsung Galaxy S21Z</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 10,999.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0 <span class="text-secondary">(290)</span></span>
+                      </div>
+                  </div>         
+                  </div>                    </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N53318702A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Samsung Galaxy S21Z</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 10,999.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0 <span class="text-secondary">(290)</span></span>
+                      </div>
+                  </div>         
+                  </div>                    </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N53318702A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Samsung Galaxy S21Z</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 10,999.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0 <span class="text-secondary">(290)</span></span>
+                      </div>
+                  </div>         
+                  </div>                    </li>
+                
+              </ul>
+            </div>
+  
+            <div class="carousel-item" data-bs-interval="999999">
+              <ul class="d-flex justify-content-around align-content-center list-unstyled">
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N53318702A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Samsung Galaxy S21Z</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 10,999.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0 <span class="text-secondary">(290)</span></span>
+                      </div>
+                  </div>         
+                  </div>
+                </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N53318702A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Samsung Galaxy S21Z</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 10,999.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0 <span class="text-secondary">(290)</span></span>
+                      </div>
+                  </div>         
+                  </div>
+                </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N53318702A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Samsung Galaxy S21Z</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 10,999.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0 <span class="text-secondary">(290)</span></span>
+                      </div>
+                  </div>         
+                  </div>
+                </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N53318702A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Samsung Galaxy S21Z</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 10,999.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0 <span class="text-secondary">(290)</span></span>
+                      </div>
+                  </div>         
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid bg-light p-2 mt-3">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-between">
+          <h2>Smartwatch Deals</h2>
+          <button type="button" class="btn btn-outline-dark rounded-0">SHOP NOW</button>
+        </div>
+        <div id="carouselExampleIndicators5" class="carousel slide" data-bs-ride="true">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators5" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators5" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators5" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            
+            <div class="carousel-item active" data-bs-interval="999999">
+              <ul class="d-flex justify-content-around align-content-center list-unstyled">
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N51220172A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Apple Watch Series 7</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 8,599.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 4.5<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>         
+                  </div>                    </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N51220172A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Apple Watch Series 7</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 8,599.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 4.5<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>                    </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N51220172A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Apple Watch Series 7</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 8,599.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 4.5<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>                    </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N51220172A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Apple Watch Series 7</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 8,599.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 4.5<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>                    </li>
+                
+              </ul>
+            </div>
+  
+            <div class="carousel-item" data-bs-interval="999999">
+              <ul class="d-flex justify-content-around align-content-center list-unstyled">
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N51220172A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Apple Watch Series 7</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 8,599.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 4.5<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>
+                </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N51220172A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Apple Watch Series 7</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 8,599.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 4.5<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>
+                </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N51220172A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Apple Watch Series 7</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 8,599.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 4.5<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>
+                </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N51220172A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Apple Watch Series 7</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 8,599.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 4.5<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators5" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators5" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container-fluid py-4 bg-light">
+      <h2 class="fw-bolder"><span class="text-primary text-opacity-50">UP TO 75% OFF</span> MEN'S FASHION</h2>
+      <div class="row">
+        <div class="col-3 col-md">
+          <img src="./images/en_dk_eg-mw-01.webp" class="w-100" alt="">
+        </div>
+        <div class="col-3 col-md">
+          <img src="./images/en_dk_eg-mw-01.webp" class="w-100" alt="">
+        </div>
+        <div class="col-3 col-md">
+          <img src="./images/en_dk_eg-mw-01.webp" class="w-100" alt="">
+        </div>
+        <div class="col-3 col-md">
+          <img src="./images/en_dk_eg-mw-01.webp" class="w-100" alt="">
+        </div>
+        <div class="col-3 col-md">
+          <img src="./images/en_dk_eg-mw-01.webp" class="w-100" alt="">
+        </div>
+        <div class="col-3 col-md">
+          <img src="./images/en_dk_eg-mw-01.webp" class="w-100" alt="">
+        </div>
+        <div class="col-3 col-md">
+          <img src="./images/en_dk_eg-mw-01.webp" class="w-100" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid bg-light p-2 mt-3">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-between">
+          <h2>Up to 70%</h2>
+          <button type="button" class="btn btn-outline-dark rounded-0">SHOP NOW</button>
+        </div>
+        <div id="carouselExampleIndicators6" class="carousel slide" data-bs-ride="true">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators6" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators6" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators6" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            
+            <div class="carousel-item active" data-bs-interval="999999">
+              <ul class="d-flex justify-content-around align-content-center list-unstyled">
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N40583502A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">HILFIGER Classic MZIF23</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 5,219.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 3.0<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>                    </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N40583502A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">HILFIGER Classic MZIF23</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 5,219.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 3.0<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>                    </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N40583502A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">HILFIGER Classic MZIF23</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 5,219.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 3.0<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>                    </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N40583502A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">HILFIGER Classic MZIF23</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 5,219.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 3.0<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>                    </li>
+                
+              </ul>
+            </div>
+  
+            <div class="carousel-item" data-bs-interval="999999">
+              <ul class="d-flex justify-content-around align-content-center list-unstyled">
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N40583502A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">HILFIGER Classic MZIF23</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 5,219.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 3.0<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>
+                </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N40583502A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">HILFIGER Classic MZIF23</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 5,219.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 3.0<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>
+                </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N40583502A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">HILFIGER Classic MZIF23</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 5,219.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 3.0<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>
+                </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N40583502A_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">HILFIGER Classic MZIF23</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 5,219.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span class="express-img"></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 3.0<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators6" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators6" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid py-4 bg-light">
+      <h2 class="fw-bolder"><span class="text-primary text-opacity-50">UP TO 75% OFF</span> WOMEN'S FASHION</h2>
+      <div class="row">
+        <div class="col-3 col-md">
+          <img src="./images/en_dk_eg-ww-07.webp" class="w-100" alt="">
+        </div>
+        <div class="col-3 col-md">
+          <img src="./images/en_dk_eg-ww-07.webp" class="w-100" alt="">
+        </div>
+        <div class="col-3 col-md">
+          <img src="./images/en_dk_eg-ww-07.webp" class="w-100" alt="">
+        </div>
+        <div class="col-3 col-md">
+          <img src="./images/en_dk_eg-ww-07.webp" class="w-100" alt="">
+        </div>
+        <div class="col-3 col-md">
+          <img src="./images/en_dk_eg-ww-07.webp" class="w-100" alt="">
+        </div>
+        <div class="col-3 col-md">
+          <img src="./images/en_dk_eg-ww-07.webp" class="w-100" alt="">
+        </div>
+        <div class="col-3 col-md">
+          <img src="./images/en_dk_eg-ww-07.webp" class="w-100" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid bg-light p-2 mt-3">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-between">
+          <h2>Up to 70%</h2>
+          <button type="button" class="btn btn-outline-dark rounded-0">SHOP NOW</button>
+        </div>
+        <div id="carouselExampleIndicators7" class="carousel slide" data-bs-ride="true">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators7" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators7" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          </div>
+          <div class="carousel-inner">
+            
+            <div class="carousel-item active" data-bs-interval="999999">
+              <ul class="d-flex justify-content-around align-content-center list-unstyled">
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N43239169V_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">ALDO Slipper W3</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 350.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>                    </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N43239169V_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">ALDO Slipper W3</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 350.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>                    </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N43239169V_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">ALDO Slipper W3</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 350.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>                    </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N43239169V_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">ALDO Slipper W3</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 350.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>                    </li>
+                
+              </ul>
+            </div>
+  
+            <div class="carousel-item" data-bs-interval="999999">
+              <ul class="d-flex justify-content-around align-content-center list-unstyled">
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N43239169V_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">ALDO Slipper W3</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 350.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>
+                </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N43239169V_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">ALDO Slipper W3</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 350.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>
+                </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N43239169V_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">ALDO Slipper W3</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 350.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>
+                </li>
+                <li>
+                  <div class="card m-2 border-0">
+                    <img src="./images/N43239169V_1.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">ALDO Slipper W3</p>
+                      <p class="fs-6">EGP<span class="fw-bold"> 350.00</span></p>
+                      <div class="rating d-flex justify-content-between">
+                        <span></span>
+                        <span style="color: orange;"><i class="bi bi-star-fill"></i> 5.0<span class="text-secondary">(216)</span></span>
+                      </div>
+                  </div>    
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators7" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators7" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid p-0 bg-light pt-4">
+      <img src="./images/en_title-23.webp" class="w-100" alt="">
+  </div>
+
+  <div class="container-fluid py-4" style="background-color: #FCF8E0">
+    <div class="row">
+      <div class="col-12 d-flex">
+        <div class="col-sm shadow p-2">
+          <img src="./images/en_brand_01.png" class="w-100" alt="">
+        </div>
+        <div class="col-sm shadow p-2">
+          <img src="./images/en_brand_02.png" class="w-100" alt="">
+        </div>
+        <div class="col-sm shadow p-2">
+          <img src="./images/en_brand_03.png" class="w-100" alt="">
+        </div>
+        <div class="col-sm shadow p-2">
+          <img src="./images/en_brand_04.png" class="w-100" alt="">
+        </div>
+        <div class="col-sm shadow p-2">
+          <img src="./images/en_brand_05.png" class="w-100" alt="">
+        </div>
+        <div class="col-sm shadow p-2">
+          <img src="./images/en_brand_06.png" class="w-100" alt="">
+        </div>
+      </div>
+      <div class="col-12 d-flex">
+        <div class="col-sm shadow p-2">
+          <img src="./images/en_brand_07.png" class="w-100" alt="">
+        </div>
+        <div class="col-sm shadow p-2">
+          <img src="./images/en_brand_08.png" class="w-100" alt="">
+        </div>
+        <div class="col-sm shadow p-2">
+          <img src="./images/en_brand_09.png" class="w-100" alt="">
+        </div>
+        <div class="col-sm shadow p-2">
+          <img src="./images/en_brand_10.png" class="w-100" alt="">
+        </div>
+        <div class="col-sm shadow p-2">
+          <img src="./images/en_brand_11.png" class="w-100" alt="">
+        </div>
+        <div class="col-sm shadow p-2">
+          <img src="./images/en_brand_12.png" class="w-100" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-100 bg-light bg-opacity-75" style="height: 20vh;">
+  </div>
+
+  <div class="container-fluid bg-light bg-opacity-75 border border-dark p-3">
+    <div class="row justify-content-between">
+      <div class="col-4 d-flex flex-column justify-content-center">
+        <h3>We're Always Here To Help</h3>
+        <p class="text-dark text-opacity-75">Reach out to us through any of these support channels</p>
+      </div>
+      <div class="col d-flex">
+        <div class="rounded-circle d-flex justify-content-center align-items-center bg-dark bg-opacity-10 m-2" style="width:50px; height:50px;"><span><i class="bi bi-exclamation-circle fs-2"></i></span></div>
+        <div class="contact">
+          <p>HELP CENTER</p>
+          <h6>
+            help.noon.com
+          </h6>
+        </div>
+      </div>
+      <div class="col d-flex">
+        <div class="rounded-circle d-flex justify-content-center align-items-center bg-dark bg-opacity-10 m-2" style="width:50px; height: 50px;"><span><i class="bi bi-envelope fs-4"></i></span></div>
+        <div class="contact">
+          <p>EMAIL SUPPORT</p>
+          <h6>
+            egypt@noon.com
+          </h6>
+        </div>
+      </div>
+      <div class="col d-flex">
+        <div class="rounded-circle d-flex justify-content-center align-items-center bg-dark bg-opacity-10 m-2" style="width:50px; height:50px;"><span><i class="bi bi-telephone fs-2"></i></span></div>
+        <div class="contact">
+          <p>PHONE SUPPORT</p>
+          <h6>
+            16358
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid bg-light p-3">
+    <ul class="d-flex justify-content-between list-unstyled row">
+      <li class="col-6 col-md mb-2">
+        <span class="fw-bold">ELECTRONICS</span>
+        <ul class="list-unstyled">
+          <li>Mobiles</li>
+          <li>Tablets</li>
+          <li>Laptops</li>
+          <li>Home Appliances</li>
+          <li>Camera, Photo and Video</li>
+          <li>Televisions</li>
+          <li>Headphones</li>
+          <li>Video Games</li>
+        </ul>
+      </li>
+      <li class="col-6 col-md mb-2">
+        <span class="fw-bold">FASHION</span>
+        <ul class="list-unstyled">
+          <li>Women's Fashion</li>
+          <li>Men's Fashion</li>
+          <li>Girls' Fashion</li>
+          <li>Boys' Fashion</li>
+          <li>Men's Watches</li>
+          <li>Women's Watches</li>
+          <li>Eyewear</li>
+          <li>Bags & Luggage</li>
+        </ul>
+      </li>
+      <li class="col-6 col-md mb-2">
+        <span class="fw-bold">HOME AND KITCHEN</span>
+        <ul class="list-unstyled">
+          <li>Kitchen & Dining</li>
+          <li>Bedding</li>
+          <li>Bath</li>
+          <li>Home Decor</li>
+          <li>Home Appliances</li>
+          <li>Tools & Home Improvement</li>
+          <li>Patio,Lawn & Garden</li>
+          <li>Home Storage & Organisation</li>
+        </ul>
+      </li>
+      <li class="col-6 col-md mb-2">
+        <span class="fw-bold">BEAUTY</span>
+        <ul class="list-unstyled">
+          <li>Women's Fragrance</li>
+          <li>Men's Fragrance</li>
+          <li>Make-Up</li>
+          <li>Haircare</li>
+          <li>Skincare</li>
+          <li>Personal Care</li>
+          <li>Tools & Accessories</li>
+        </ul>
+      </li>
+      <li class="col-6 col-md mb-2">
+        <span class="fw-bold">KIDS, BABY & TOYS</span>
+        <ul class="list-unstyled">
+          <li>Strollers, Prams & Accessories</li>
+          <li>Car Seats</li>
+          <li>Baby Clothing</li>
+          <li>Feeding</li>
+          <li>Bathing & Skincare</li>
+          <li>Diapering</li>
+          <li>Baby & Toddler Toys</li>
+          <li>Toys & Games</li>
+        </ul>
+      </li>
+      <li class="col-6 col-md mb-2">
+        <span class="fw-bold">TOP BRANDS</span>
+        <ul class="list-unstyled">
+          <li>Apple</li>
+          <li>Samsung</li>
+          <li>Nike</li>
+          <li>Ray-Ban</li>
+          <li>Tefal</li>
+          <li>L'Oreal Paris</li>
+          <li>Chicco</li>
+          <li>Tornado</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container-fluid d-flex justify-content-around p-3 bg-light">
+    <div class="mobile d-flex flex-column">
+      <h5 class="align-self-center">SHOP ON THE GO</h5>
+      <div class="app-links d-flex justify-content-center">
+        <div class="m-2" style="width:150px"><a href="#"><img src="./images/app-store.svg" class="w-100" alt=""></a></div>
+        <div class="m-2" style="width:150px"><a href="#"><img src="./images/google-play.svg" class="w-100" alt=""></a></div>
+      </div>
+    </div>
+    <div class="social d-flex flex-column">
+      <h5 class="align-self-center">CONNECT WITH US</h5>
+      <div class="social d-flex ">
+        <div class="rounded-circle d-flex justify-content-center align-items-center m-2" style="width:50px; height:50px; background-color: #FEF14E;"><a href="#"><i class="bi bi-facebook fs-3 text-dark"></i></a></div>
+        <div class="rounded-circle d-flex justify-content-center align-items-center m-2" style="width:50px; height:50px; background-color: #FEF14E;"><a href="#"><i class="bi bi-twitter fs-3 text-dark"></i></a></div>
+        <div class="rounded-circle d-flex justify-content-center align-items-center m-2" style="width:50px; height:50px; background-color: #FEF14E;"><a href="#"><i class="bi bi-instagram fs-3 text-dark"></i></a></div>
+        <div class="rounded-circle d-flex justify-content-center align-items-center m-2" style="width:50px; height:50px; background-color: #FEF14E;"><a href="#"><i class="bi bi-linkedin fs-3 text-dark"></i></a></div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid bg-light bg-opacity-75 d-flex">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="labels d-flex justify-content-center align-items-center">
+        <span class="px-1 text-secondary">© 2022 noon. All Rights Reserved</span>
+    <span><img src="./images/mastercard-color.svg" class="px-2" style="width:80px" alt=""></span>
+    <span><img src="./images/visa-color.svg" class="px-2" style="width:80px" alt=""></span>
+    <span><img src="./images/cash-color.svg" class="px-2" style="width:80px" alt=""></span>
+    <span><img src="./images/amex-color.svg" class="px-2" style="width:80px;" alt=""></span>
+      </div>
+    <div class="links d-none d-md-flex justify-content-center align-items-center">
+      <a href="#" class="px-2">Careers</a>
+    <a href="#" class="px-2">Waranty Policy</a>
+    <a href="#" class="px-2">Sell with us</a>
+    <a href="#" class="px-2">Terms of Use</a>
+    <a href="#" class="px-2">Terms of Sale</a>
+    <a href="#" class="px-2">Privacy Policy</a>
+    </div>
+    <div class="links d-md-none d-flex flex-column  justify-content-center align-items-center">
+     <div class="liks-1">
+      <a href="#" class="px-2">Careers</a>
+      <a href="#" class="px-2">Waranty Policy</a>
+      <a href="#" class="px-2">Sell with us</a>
+     </div>
+     <div class="links-2">
+      <a href="#" class="px-2">Terms of Use</a>
+      <a href="#" class="px-2">Terms of Sale</a>
+      <a href="#" class="px-2">Privacy Policy</a>
+     </div>
+    </div>
+    </div>
+  </div>
+</body>
+</html>
+
